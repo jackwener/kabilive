@@ -1,4 +1,4 @@
-package edu.kabi.live
+package edu.kabi.live.ui
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.shuyu.gsyvideoplayer.GSYVideoManager
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+import edu.kabi.live.R
 
 class PlayerActivity : AppCompatActivity() {
     var videoPlayer: StandardGSYVideoPlayer? = null

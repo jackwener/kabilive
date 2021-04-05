@@ -1,4 +1,4 @@
-package edu.kabi.live
+package edu.kabi.live.ui
 
 import android.Manifest
 import android.content.SharedPreferences
@@ -6,7 +6,6 @@ import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.hardware.Camera
-import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
@@ -18,9 +17,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.github.faucamp.simplertmp.RtmpHandler
 import com.seu.magicfilter.utils.MagicFilterType
+import edu.kabi.live.R
 import net.ossrs.yasea.SrsCameraView
 import net.ossrs.yasea.SrsCameraView.CameraCallbacksHandler
 import net.ossrs.yasea.SrsEncodeHandler
@@ -31,7 +30,7 @@ import net.ossrs.yasea.SrsRecordHandler.SrsRecordListener
 import java.io.IOException
 import java.net.SocketException
 
-class LiveActivity : AppCompatActivity(), RtmpHandler.RtmpListener, SrsRecordListener,
+class RecordActivity : AppCompatActivity(), RtmpHandler.RtmpListener, SrsRecordListener,
     SrsEncodeListener {
 
 
@@ -59,7 +58,9 @@ class LiveActivity : AppCompatActivity(), RtmpHandler.RtmpListener, SrsRecordLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        setContentView(R.layout.activity_live)
+        setContentView(R.layout.activity_record)
+
+        val message = intent.getStringExtra("url")
 
         // response screen rotation event
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR

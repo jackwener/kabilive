@@ -1,4 +1,4 @@
-package edu.kabi.live.fragment
+package edu.kabi.live.ui.fragment
 
 import androidx.fragment.app.Fragment
 import edu.kabi.live.R

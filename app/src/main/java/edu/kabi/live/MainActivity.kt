@@ -4,13 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import edu.kabi.live.fragment.AccountFragment
-import edu.kabi.live.fragment.FavoriteFragment
-import edu.kabi.live.fragment.HomeFragment
-import edu.kabi.live.fragment.SortFragment
+import edu.kabi.live.ui.RecordActivity
+import edu.kabi.live.ui.fragment.AccountFragment
+import edu.kabi.live.ui.fragment.FavoriteFragment
+import edu.kabi.live.ui.live.HomeFragment
+import edu.kabi.live.ui.sort.SortFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.floatingActionButton)
         fab.setOnClickListener {
-            val intent = Intent(this, LiveActivity::class.java).putExtra(
+            val intent = Intent(this, RecordActivity::class.java).putExtra(
                 "url", "rtmp://47.94.222.34:1935/stream" + "jakevin"
             )
             startActivity(intent)
